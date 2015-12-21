@@ -1,9 +1,31 @@
-﻿Build started 12/18/2015 6:45:30 PM.
-     1>Project "C:\Users\Moustapha Sh\Documents\visual studio 2013\Projects\Compiler\Compiler\Compiler\Compiler.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         Compiler.vcxproj -> C:\Users\Moustapha Sh\Documents\visual studio 2013\Projects\Compiler\Compiler\Debug\Compiler.exe
-     1>Done Building Project "C:\Users\Moustapha Sh\Documents\visual studio 2013\Projects\Compiler\Compiler\Compiler\Compiler.vcxproj" (Build target(s)).
+﻿Build started 12/21/2015 9:14:22 AM.
+     1>Project "D:\Compiler\CMP\Compiler\Compiler\Compiler.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _CRT_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\lex.yy.cc ..\yacc.cpp ErrorRecovery.cpp
+         ErrorRecovery.cpp
+         yacc.cpp
+     1>d:\compiler\cmp\compiler\compiler\yacc.cpp(486): warning C4273: 'malloc' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(642) : see previous definition of 'malloc'
+     1>d:\compiler\cmp\compiler\compiler\yacc.cpp(493): warning C4273: 'free' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(641) : see previous definition of 'free'
+     1>d:\compiler\cmp\compiler\compiler\yacc.cpp(3785): warning C4065: switch statement contains 'default' but no 'case' labels
+         lex.yy.cc
+     1>c:\users\moustapha sh\documents\visual studio 2013\projects\compiler\compiler\lex.l(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\moustapha sh\documents\visual studio 2013\projects\compiler\compiler\lex.l(780): warning C4129: 's' : unrecognized character escape sequence
+     1>c:\users\moustapha sh\documents\visual studio 2013\projects\compiler\compiler\lex.l(780): warning C4305: '=' : truncation from 'int' to 'char'
+     1>c:\users\moustapha sh\documents\visual studio 2013\projects\compiler\compiler\lex.l(780): warning C4309: '=' : truncation of constant value
+     1>d:\compiler\cmp\compiler\compiler\lex.yy.cc(3748): warning C4273: 'isatty' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\io.h(332) : see previous definition of 'isatty'
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Compiler\CMP\Compiler\Debug\Compiler.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Compiler\CMP\Compiler\Debug\Compiler.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Compiler\CMP\Compiler\Debug\Compiler.lib" /MACHINE:X86 /FORCE:MULTIPLE Debug\lex.yy.obj
+         Debug\yacc.obj
+         Debug\ErrorRecovery.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+     1>lex.yy.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         Compiler.vcxproj -> D:\Compiler\CMP\Compiler\Debug\Compiler.exe
+     1>Done Building Project "D:\Compiler\CMP\Compiler\Compiler\Compiler.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.89
+Time Elapsed 00:00:06.52
