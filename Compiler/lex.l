@@ -1566,5 +1566,13 @@ Null					[^.\n\t]
 													outlex<<"String "<<lineNo<<" "<<colNo<<"\n";
 													return T_STRING;
 												}
-											
+
+[\n.]*											{	yylval.r.myLineNo= lineNo;
+													yylval.r.myColno = colNo;
+													yylval.r.str = new char[255];
+													yylval.r.str[0] = '\0';
+													strcat(yylval.r.str, yytext);
+													colNo += strlen(yytext);
+													outlex<<"UNPHPCODE "<<lineNo<<" "<<colNo<<"\n";
+												}
 %%
