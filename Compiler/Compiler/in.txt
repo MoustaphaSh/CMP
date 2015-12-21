@@ -1,0 +1,57 @@
+<?php
+echo  "hello I'm the second sample and I'm not simple";
+echo  "every one who are working with us since term has started can parsing me";
+class DB{
+	static private string $dbConn;
+	static private string  $host = 'localhost';
+	static private string $userName = 'root';
+	static private string $password = '';
+	static private string $dbName = 'test';
+	static public function connect():void{
+		if(! QueryExecuter::$dbConn){
+			QueryExecuter::$dbConn = mysql_connect(QueryExecuter::$host, QueryExecuter::$userName, QueryExecuter::$password);
+			mysql_select_db(QueryExecuter::$dbName, QueryExecuter::$dbConn);
+			mysql_set_charset('utf8');
+		}
+	}
+	static public function executeBatch(int [] $b,bool $onTxn=true):bool{
+		try{
+			self::connect();
+			if($onTxn){
+				mysql_query("begin");
+			}
+			bool $ok  = true;
+			for(int $i=0; $i<count($b); $i++){
+	
+				bool $ret = mysql_query($b[$i]);
+				if($ret == false){
+					$ok = false;
+				}
+			}
+			if(!$ok){
+				if($onTxn)
+					mysql_query("rollback");
+				return false;
+			}
+			else{
+				if($onTxn)
+					mysql_query("commit");
+				return true;
+			}
+		}
+		catch(Exception $e){
+			return "Err".$e->getMessage();
+		}
+	}
+	public function sayHello():void{
+		echo "I will test your lex";
+		string $x="do you thing that I'm right cluase";
+		string $y="show E.ahmad My Value \\n \" he want to test your lex value";
+		/*
+		 * \/
+		 * in this code or any sample like it if I change some things you will be able to handle error
+		 * */
+		
+	}
+}
+?>
