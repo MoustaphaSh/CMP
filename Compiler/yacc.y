@@ -598,26 +598,37 @@ foreach_variable:
 ;
 
 parameter_list:
-      non_empty_parameter_list
+      parameter_without_static_scalar_list ',' parameter_with_static_scalar_list
 	  {cout<<"parameter_list1\n";}
-    | /* empty */
+	| parameter_without_static_scalar_list
 	{cout<<"parameter_list2\n";}
+	| parameter_with_static_scalar_list
+	{cout<<"parameter_list3\n";}
+	| /*empty*/
+	{cout<<"parameter_list4\n";}
 ;
 
-non_empty_parameter_list:
-      parameter
-	  {cout<<"non_empty_parameter_list1\n";}
-    | non_empty_parameter_list ',' parameter
-	{cout<<"non_empty_parameter_list2\n";}
+parameter_without_static_scalar_list:
+      parameter_without_static_scalar
+	  {cout<<"parameter_without_static_scalar_list1\n";}
+    | parameter_without_static_scalar_list ',' parameter_without_static_scalar
+	{cout<<"parameter_without_static_scalar_list2\n";}
 ;
 
-parameter:
-      param_type optional_ref optional_ellipsis T_VARIABLE
-	  {cout<<"parameter1\n";}
-    | param_type optional_ref optional_ellipsis T_VARIABLE '=' static_scalar
-	{cout<<"parameter2\n";}
-          
+parameter_without_static_scalar:
+	  param_type optional_ref optional_ellipsis T_VARIABLE
+	  {cout<<"parameter_without_static_scalar\n";}
+
+parameter_with_static_scalar_list:
+      parameter_with_static_scalar
+	  {cout<<"parameter_with_static_scalar_list1\n";}
+    | parameter_with_static_scalar_list ',' parameter_with_static_scalar
+	{cout<<"parameter_with_static_scalar_list2\n";}
 ;
+
+parameter_with_static_scalar:
+	  param_type optional_ref optional_ellipsis T_VARIABLE '=' static_scalar
+	  {cout<<"parameter_with_static_scalar\n";}
 
 type:
       name
@@ -1511,9 +1522,10 @@ int yylex()
 }
 void main(void)
 {
-	freopen("C:\\Users\\Moustapha Sh\\Documents\\Visual Studio 2013\\Projects\\Compiler\\Compiler\\Compiler\\in.txt","r",stdin);
-	freopen("C:\\Users\\Moustapha Sh\\Documents\\Visual Studio 2013\\Projects\\Compiler\\Compiler\\Compiler\\out.txt","w",stdout);
+	freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\in.txt","r",stdin);
+	freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\out.txt","w",stdout);
 	Parser* p = new Parser();
+
 	p->parse();
 	
 }

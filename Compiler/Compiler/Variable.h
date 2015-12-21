@@ -1,40 +1,37 @@
 #pragma once
 
-class Variable : Var
+class Variable
 {
-private:
-	bool* isFinal;
-	bool* isStatic;
 public:
-	void setType(char* type);
-	char* getType();
+	Modifiers modifier=Modifiers::None;
+	bool isFinal=0;
+	bool isStatic=0;
+	bool isRef=0;
+	char type;
+	void* value;
 
-	void setValue(void* value);
-	void* getValue();
-
-	void setIsFinal(bool* isFinal){
-		this->isFinal = isFinal;
-	}
-	bool* getIsFinal(){
-		return this->isFinal;
-	}
-
-	void setIsStatic(bool* isStatic){
-		this->isStatic = isStatic;
-	}
-	bool* getIsStatic(){
-		return this->isStatic;
-	}
-
-	Variable(){
-	}
-	Variable(char* type, void* value, bool* isFinal, bool* isStatic){
-		this->setType(type);
-		this->setValue(value);
+	Variable(bool isFinal, bool isStatic, char type, void* value)
+	{
+		this->type = type;
+		this->value = value;
 		this->isFinal = isFinal;
 		this->isStatic = isStatic;
 	}
-	virtual ~Variable(){
+	Variable(bool isRef, char type, void* value)
+	{
+		this->type = type;
+		this->value = value;
+		this->isRef = isRef;
+	}
+	Variable(Modifiers modifier, bool isFinal, bool isStatic, char type, void* value)
+	{
+		this->type = type;
+		this->value = value;
+		this->isFinal = isFinal;
+		this->isStatic = isStatic;
+		this->modifier = modifier;
+	}
+	virtual ~Variable()
+	{
 	}
 };
-

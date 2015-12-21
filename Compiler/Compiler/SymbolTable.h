@@ -1,24 +1,80 @@
 #pragma once
+
+#include <iostream>
+#include <istream>
+#include <ostream>
+#include <fstream>
 #include "Scope.h"
+using namespace std;
+
 
 class SymbolTable
 {
 public:
+	char scopeType;
 	void* currScope;
 	void* rootScope;
 
-	Variable* insertVariableInCurrentScope(char* name){
-		Variable * v = this->getVariable(name);
-		if (v){
-			return 0;//item is exist previously
+	void insertVariable(char type, char* name, void* value,Modifiers modifier=Modifiers::None, bool isRef=0, bool isFinal=0, bool isStatic=0)
+	{
+		Variable * var = this->getVariable(name);
+		if (var)
+		{
+			cout << name << "variable is exist previously";
 		}
-		else{
-			v = new Variable();
-			((Scope*)currScope)->variablesMap->putVariable(name, v);
+		else
+		{
+			switch (scopeType)
+			{
+			case 'm':
+			{
+						Variable* newVariable = new Variable(isFinal, isStatic, type, value);
+						 ((Scope*)(currScope))->variables->putVariable(name, newVariable);
+						 break;
+			}
+			case 'c':
+			{
+						Variable* newVariable = new Variable(modifier, isFinal, isStatic, type, value);
+						((Scope*)(currScope))->variables->putVariable(name, newVariable);
+						break;
+			}
+			case 'f':
+			{
+						Variable* newVariable = new Variable(isFinal, isStatic, type, value);
+						((Scope*)(currScope))->variables->putVariable(name, newVariable);
+						break;
+			}
+			default:
+				break;
+			}
 		}
-		return v;
 	}
-	Variable* getVariable(char* name){
+
+	Variable* getVariable(char* name)
+	{
+		switch (scopeType)
+		{
+		case 'm':
+		{
+					Variable* newVariable = new Variable(isFinal, isStatic, type, value);
+					((Scope*)(currScope))->variables->putVariable(name, newVariable);
+					break;
+		}
+		case 'c':
+		{
+					Variable* newVariable = new Variable(modifier, isFinal, isStatic, type, value);
+					((Scope*)(currScope))->variables->putVariable(name, newVariable);
+					break;
+		}
+		case 'f':
+		{
+					Variable* newVariable = new Variable(isFinal, isStatic, type, value);
+					((Scope*)(currScope))->variables->putVariable(name, newVariable);
+					break;
+		}
+		default:
+			break;
+		}
 		Variable* variable = (Variable*)((Scope*)currScope)->variablesMap->get(name);
 		if (!variable){
 			Scope* temp = dynamic_cast<Scope*>(((Scope*)currScope)->parent);
@@ -40,6 +96,7 @@ public:
 	}
 	
 	SymbolTable(void){
+		freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\SymbolTableOut.txt", "w", stdout);
 		this->rootScope = new Scope();
 		this->currScope = this->rootScope;
 	}

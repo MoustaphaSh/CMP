@@ -14,7 +14,7 @@ class DB{
 			mysql_set_charset('utf8');
 		}
 	}
-	static public function executeBatch(int [] $b,bool $onTxn=true):bool{
+	static public function executeBatch(int [] $b,bool $onTxn=true,bool $onTxn=true,bool $onTxn=true,bool $onTxn=true):bool{
 		try{
 			self::connect();
 			if($onTxn){

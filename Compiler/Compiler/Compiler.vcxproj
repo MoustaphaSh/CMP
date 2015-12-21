@@ -90,16 +90,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\yacc.hpp" />
-    <ClInclude Include="Class.h" />
-    <ClInclude Include="DataMember.h" />
     <ClInclude Include="ErrorRecovery.h" />
-    <ClInclude Include="Function.h" />
+    <ClInclude Include="FunctionScope.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="MapElem.h" />
-    <ClInclude Include="Parameter.h" />
     <ClInclude Include="Scope.h" />
+    <ClInclude Include="MainScope.h" />
+    <ClInclude Include="ClassScope.h" />
     <ClInclude Include="SymbolTable.h" />
-    <ClInclude Include="Var.h" />
     <ClInclude Include="Variable.h" />
   </ItemGroup>
   <ItemGroup>

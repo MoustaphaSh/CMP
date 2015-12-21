@@ -1,20 +1,15 @@
 #pragma once
 #include "Map.h"
+#include <iostream>
+using namespace std;
+
 class Scope
 {
 public:
-	Map* variablesMap;
-	Map* classesMap;
-	Map* functionsMap;
-	Scope* parent;
+	Scope(){};
 
-	Scope(Scope* parent){
-		this->variablesMap = new Map();
-		this->classesMap = new Map();
-		this->functionsMap = new Map();
-		this->parent = parent;
-	}
-	virtual ~Scope(){
-	}
+	virtual void insertVariable();
+
+	
 };
 

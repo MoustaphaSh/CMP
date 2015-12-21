@@ -1,8 +1,3 @@
-/* i hate compilers */
-/* i hate visual studio */
-/* if you fear/hate sharing your ideas, don't use my stupid tool */
-
-
 %{
 		#include "yacc.hpp";
 		#include <iostream>
@@ -11,7 +6,7 @@
 		#include <fstream>
 		#include <string>		
 		#include <FlexLexer.h>	
-		ofstream outlex("C:\\Users\\Moustapha Sh\\Documents\\Visual Studio 2013\\Projects\\Compiler\\Compiler\\Compiler\\outlex.txt");
+		ofstream outlex("D:\\Compiler\\CMP\\Compiler\\Compiler\\outlex.txt");
 		int lineNo = 1;
 		int colNo = 0;
 		int i;

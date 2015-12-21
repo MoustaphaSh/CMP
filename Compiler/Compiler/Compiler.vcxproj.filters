@@ -43,9 +43,6 @@
     <ClInclude Include="ErrorRecovery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Var.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MapElem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -55,22 +52,19 @@
     <ClInclude Include="Variable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parameter.h">
+    <ClInclude Include="SymbolTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DataMember.h">
+    <ClInclude Include="ClassScope.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionScope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Class.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SymbolTable.h">
+    <ClInclude Include="MainScope.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

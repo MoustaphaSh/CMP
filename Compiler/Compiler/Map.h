@@ -1,16 +1,13 @@
 #pragma once
 #include <iostream>
 #include "MapElem.h"
-#include "Var.h"
 #include "Variable.h"
-#include "Parameter.h"
-#include "DataMember.h"
-#include "Function.h"
-#include "Class.h"
+#include "FunctionScope.h"
+#include "ClassScope.h"
 
 enum Modifiers
 {
-	Public, Proticted, Private
+	None, Public, Proticted, Private
 };
 const int MAX_LENGTH = 71;
 
@@ -31,33 +28,18 @@ private:
 		return (retVal%mapLength);
 	}
 public:
-	Var* putVar(char* name, char* type, void* value){
 
-		Var* newVar = new Var(type, value);
-		
+	void putVariable(char* name, void* elem)
+	{
 		int index = this->hash(name);
-		MapElem * newMapElem = new MapElem(name, newVar, this->arr[index]);
+		MapElem * newMapElem = new MapElem(name, elem, this->arr[index]);
 
 		this->arr[index] = newMapElem;
-
-		return newVar;
 	}
 
-	Variable* putVariable(char* name, char* type, void* value, bool* isFinal, bool* isStatic){
+	Variable* putParameter(char* name, bool* isRef, char* type, void* value){
 
-		Variable* newVariable = new Variable(type, value, isFinal, isStatic);
-
-		int index = this->hash(name);
-		MapElem * newMapElem = new MapElem(name, newVariable, this->arr[index]);
-
-		this->arr[index] = newMapElem;
-
-		return newVariable;
-	}
-
-	Parameter* putParameter(char* name, char* type, void* value, bool* isRef){
-
-		Parameter* newParameter = new Parameter(type, value, isRef);
+		Variable* newParameter = new Variable(isRef,type, value);
 
 		int index = this->hash(name);
 		MapElem * newMapElem = new MapElem(name, newParameter, this->arr[index]);
@@ -67,9 +49,9 @@ public:
 		return newParameter;
 	}
 
-	DataMember* putDataMember(char* name, char* type, void* value, bool* isFinal, bool* isStatic, Modifiers* modifier){
+	Variable* putDataMember(char* name, char* type, void* value, bool* isFinal, bool* isStatic, Modifiers* modifier){
 
-		DataMember* newDataMember = new DataMember(type, value, isFinal, isStatic, modifier);
+		Variable* newDataMember = new Variable(modifier, isFinal, isStatic, type, value);
 
 		int index = this->hash(name);
 		MapElem * newMapElem = new MapElem(name, newDataMember, this->arr[index]);
@@ -79,9 +61,9 @@ public:
 		return newDataMember;
 	}
 	
-	Function* putFunction(char* name, Map* parameter, void* returnValue, Scope* parent, bool* isFinal, bool* isStatic, Modifiers* modifier){
+	FunctionScope* putFunction(void* parent, char* name, Modifiers* modifier, bool* isFinal, bool* isStatic, Map* parameter, void* returnValue){
 
-		Function* newFunction = new Function(parent, parameter, returnValue);
+		FunctionScope* newFunction = new FunctionScope(parent);
 
 		int index = this->hash(name);
 		MapElem * newMapElem = new MapElem(name, newFunction, this->arr[index]);
@@ -91,9 +73,9 @@ public:
 		return newFunction;
 	}
 
-	Class* putClass(char* name, Class *inheritedType, Scope* parent, bool* isFinal, bool* isStatic, Modifiers* modifier){
+	ClassScope* putClass(void* parent, char* name, Modifiers* modifier, bool* isFinal, bool* isStatic, char* inheritedType){
 
-		Class* newClass = new Class(parent, inheritedType);
+		ClassScope* newClass = new ClassScope(parent, inheritedType);
 
 		int index = this->hash(name);
 		MapElem * newMapElem = new MapElem(name, newClass, this->arr[index]);
@@ -109,13 +91,13 @@ public:
 
 		MapElem * temp = this->arr[index];
 
-		while ((temp != 0) && (strcmp(temp->getName(), name) != 0)){
-			temp = temp->getNext();
+		while ((temp != 0) && (strcmp(temp->name, name) != 0)){
+			temp = temp->next;
 		}
 		if (temp == 0)
 			return 0;
 		else
-			return temp->getElem();
+			return temp->elem;
 	}
 
 	Map()
