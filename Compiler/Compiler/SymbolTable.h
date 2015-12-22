@@ -9,87 +9,138 @@ using namespace std;
 class SymbolTable
 {
 public:
-	static Nodes st;
-	static Nodes curr;
+	static Node* root;
+	static Node* curr;
 
 	SymbolTable(){
 		freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\SymbolTableOut.txt", "w", stdout);
+		curr = new Node();
+		curr->parent = NULL;
+		root = curr;
 	}
 
 
-	void addNode(){
-		if (st.node == NULL){
-			st.node = new Node();
-		}
+	void addNodeToCurr(){	
+		Node* t = new Node();		
+		t->prev = curr;
+		curr->next = t;
+		curr = curr->next;
+	}
 
+
+	
+
+	Node* addVar(char* name){
+		Node n = Node();
+		n.parent = curr;
+		n.name = name;
+		return &n;
+	}
+
+	Node* addDatamem(char* name){
+		Node n = Node();
+		n.parent = curr;
+		n.name = name;
+		return &n;
+	}
+
+	Node* addParam(char* name){
+		Node n = Node();
+		n.parent = curr;
+		n.name = name;
+		return &n;
+	}
+
+	Node* addClass(char* name){
+		Node n = Node();
+		n.parent = curr;
+		n.name = name;
+		return &n;
+	}
+
+	Node* addFunc(char* name){
+		Node n = Node();
+		n.parent = curr;
+		n.name = name;
+		return &n;
+	}
+
+
+	void returnToParent(){
+		curr = curr->parent;
+	}
+
+	Node* goInside(Node* t){
+		curr = t;
 	}
 	
 
-	void print(Nodes t, int i=0){
-		do{
-			cout << i<< "-"<<t.node->type <<" : "<< t.node->name<<"\n";	
+	void print(Node* t, int i=0){
+		while (t!= NULL)
+		{
 
-			switch (t.node->type)
+		
+			cout << i<< "-"<<t->type <<" : "<< t->name<<"\n";	
+
+			switch (t->type)
 			{
 				case 'v':
-					cout << t.node->varType<<"\t";
-					cout << t.node->varVal;
+					Node* tt = t->variables;
+					while (tt != NULL)
+					{
+						cout << t->varType << " " << t->varVal<<"\n";
+						tt = tt->next;
+					}
 					break;
 
 				case 'c':
-					cout << t.node->modifier << "\t";
-					cout << t.node->inheretedFrom->name << "\t";
-					Nodes tt = t.node->variables;
-					do{
-						print(tt, i+1);
-					} while (tt.next != NULL);
+					cout << t->modifier << " " << t->inheretedFrom->name << "\n";
+
+					print(t->variables, i + 1);
+
+					print(t->functions, i + 1);
+
 					break;
 
 				case 'f':
-					Nodes tt = t.node->variables;
-					do{
-						print(tt, i + 1);
-					} while (tt.next != NULL);
 
-					tt = t.node->parameters;
-					do{
-						print(tt, i + 1);
-					} while (tt.next != NULL);
-					
-					
-					tt = t.node->functions;
-					do{
-						print(tt, i + 1);
-					} while (tt.next != NULL);
+					print(t->variables, i+1);
 
+					print(t->parameters, i + 1);
+							
+					print(t->functions, i + 1);
 
-					tt = t.node->subClasses;
-					do{
-						print(tt, i + 1);
-					} while (tt.next != NULL);
-
-					break;
+					print(t->subClasses, i + 1);
 
 
 				case 'p':
-					cout << t.node->varType << "\t";
-					cout << t.node->varVal<<"\t";
-					cout << t.node->isRef;
+					Node* tt = t->variables;
+					while (tt != NULL)
+					{
+						cout << t->varType << " " << t->varVal << " " << t->isRef << "\n";
+						tt = tt->next;
+					}
 					break;
 
 
 				case 'd':
-					cout << t.node->varType << "\t";
-					cout << t.node->varVal << "\t";
-					cout << t.node->isAbstract << "\t";
-					cout << t.node->isFinal << "\t";
-					cout << t.node->isStatic;
+
+					Node* tt = t->variables;
+					while (tt != NULL)
+					{
+						cout << t->varType << " " << t->varVal << " " << t->isAbstract << " " << t->isFinal << " " << t->isStatic << "\n";
+						tt = tt->next;
+					}
 					break;
 
 			default:
 				break;
 			}
-		} while (t.next != NULL);
+
+
+			t = t->next;
+
+		} 
 
 	}
 	

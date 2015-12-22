@@ -7,26 +7,24 @@ enum Modifiers
 	None, Public, Proticted, Private
 };
 
-struct Nodes
-{
-	Node* prev = NULL;
-	Node* node = NULL;
-	Node* next = NULL;
-};
 
 class Node
 {
 public:
+
+	Node* prev = NULL;
+	Node* next = NULL;
+
 	char* name;
 	char type;
-	Node* parent;
+	Node* parent = NULL;
 	Modifiers modifier;
 	Node* inheretedFrom = NULL; //class
 	bool isAbstract = 0;
-	Nodes subClasses;
-	Nodes functions;
-	Nodes parameters;
-	Nodes variables;
+	Node* subClasses;
+	Node* functions;
+	Node* parameters;
+	Node* variables;
 	Node* returnValue;
 	bool isFinal = 0;
 	bool isStatic = 0;
@@ -72,7 +70,7 @@ public:
 		return n;
 	}
 
-	static Node classNode(Node* parent, char* name, Modifiers modifier, bool isAbstract, Node* inheretedFrom, Nodes variables, Nodes subClasses){
+	static Node classNode(Node* parent, char* name, Modifiers modifier, bool isAbstract, Node* inheretedFrom, Node* variables, Node* subClasses){
 		Node n = Node();
 		n.parent = parent;
 		n.type = 'c';
@@ -85,7 +83,7 @@ public:
 		return n;
 	}
 
-	static Node funcNode(Node* parent, char* name, Nodes variables, Nodes parameters, Node* returnValue, Nodes functions, Nodes subClasses){
+	static Node funcNode(Node* parent, char* name, Node* variables, Node* parameters, Node* returnValue, Node* functions, Node* subClasses){
 		Node n =  Node();
 		n.parent = parent;
 		n.type = 'f';
@@ -100,20 +98,15 @@ public:
 
 
 	Node* getVar(char* name){
-		while (variables.next != NULL)
+		Node* t = variables;
+		while (t != NULL)
 		{
-			if (strcmp(variables.node->name, name)){
-				return variables.node;
+			if (strcmp(t->name, name)){
+				return t;
 			}
+			t = t->next;
 		}
-		
-		if (strcmp(variables.node->name, name)){
-			return variables.node;
-		}
-		else
-		{
-			return NULL;
-		}
+		return NULL;
 	}
 
 };
