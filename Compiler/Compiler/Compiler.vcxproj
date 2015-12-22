@@ -91,14 +91,8 @@
   <ItemGroup>
     <ClInclude Include="..\yacc.hpp" />
     <ClInclude Include="ErrorRecovery.h" />
-    <ClInclude Include="FunctionScope.h" />
-    <ClInclude Include="Map.h" />
-    <ClInclude Include="MapElem.h" />
-    <ClInclude Include="Scope.h" />
-    <ClInclude Include="MainScope.h" />
-    <ClInclude Include="ClassScope.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="SymbolTable.h" />
-    <ClInclude Include="Variable.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Replace of.txt" />

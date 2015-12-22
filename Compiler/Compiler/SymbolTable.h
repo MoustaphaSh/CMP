@@ -1,106 +1,97 @@
-#pragma once
-
+#include "Node.h"
 #include <iostream>
 #include <istream>
 #include <ostream>
 #include <fstream>
-#include "Scope.h"
 using namespace std;
 
 
 class SymbolTable
 {
 public:
-	char scopeType;
-	void* currScope;
-	void* rootScope;
+	static Nodes st;
+	static Nodes curr;
 
-	void insertVariable(char type, char* name, void* value,Modifiers modifier=Modifiers::None, bool isRef=0, bool isFinal=0, bool isStatic=0)
-	{
-		Variable * var = this->getVariable(name);
-		if (var)
-		{
-			cout << name << "variable is exist previously";
+	SymbolTable(){
+		freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\SymbolTableOut.txt", "w", stdout);
+	}
+
+
+	void addNode(){
+		if (st.node == NULL){
+			st.node = new Node();
 		}
-		else
-		{
-			switch (scopeType)
+
+	}
+	
+
+	void print(Nodes t, int i=0){
+		do{
+			cout << i<< "-"<<t.node->type <<" : "<< t.node->name<<"\n";	
+
+			switch (t.node->type)
 			{
-			case 'm':
-			{
-						Variable* newVariable = new Variable(isFinal, isStatic, type, value);
-						 ((Scope*)(currScope))->variables->putVariable(name, newVariable);
-						 break;
-			}
-			case 'c':
-			{
-						Variable* newVariable = new Variable(modifier, isFinal, isStatic, type, value);
-						((Scope*)(currScope))->variables->putVariable(name, newVariable);
-						break;
-			}
-			case 'f':
-			{
-						Variable* newVariable = new Variable(isFinal, isStatic, type, value);
-						((Scope*)(currScope))->variables->putVariable(name, newVariable);
-						break;
-			}
+				case 'v':
+					cout << t.node->varType<<"\t";
+					cout << t.node->varVal;
+					break;
+
+				case 'c':
+					cout << t.node->modifier << "\t";
+					cout << t.node->inheretedFrom->name << "\t";
+					Nodes tt = t.node->variables;
+					do{
+						print(tt, i+1);
+					} while (tt.next != NULL);
+					break;
+
+				case 'f':
+					Nodes tt = t.node->variables;
+					do{
+						print(tt, i + 1);
+					} while (tt.next != NULL);
+
+					tt = t.node->parameters;
+					do{
+						print(tt, i + 1);
+					} while (tt.next != NULL);
+					
+					
+					tt = t.node->functions;
+					do{
+						print(tt, i + 1);
+					} while (tt.next != NULL);
+
+
+					tt = t.node->subClasses;
+					do{
+						print(tt, i + 1);
+					} while (tt.next != NULL);
+
+					break;
+
+
+				case 'p':
+					cout << t.node->varType << "\t";
+					cout << t.node->varVal<<"\t";
+					cout << t.node->isRef;
+					break;
+
+
+				case 'd':
+					cout << t.node->varType << "\t";
+					cout << t.node->varVal << "\t";
+					cout << t.node->isAbstract << "\t";
+					cout << t.node->isFinal << "\t";
+					cout << t.node->isStatic;
+					break;
+
 			default:
 				break;
 			}
-		}
-	}
+		} while (t.next != NULL);
 
-	Variable* getVariable(char* name)
-	{
-		switch (scopeType)
-		{
-		case 'm':
-		{
-					Variable* newVariable = new Variable(isFinal, isStatic, type, value);
-					((Scope*)(currScope))->variables->putVariable(name, newVariable);
-					break;
-		}
-		case 'c':
-		{
-					Variable* newVariable = new Variable(modifier, isFinal, isStatic, type, value);
-					((Scope*)(currScope))->variables->putVariable(name, newVariable);
-					break;
-		}
-		case 'f':
-		{
-					Variable* newVariable = new Variable(isFinal, isStatic, type, value);
-					((Scope*)(currScope))->variables->putVariable(name, newVariable);
-					break;
-		}
-		default:
-			break;
-		}
-		Variable* variable = (Variable*)((Scope*)currScope)->variablesMap->get(name);
-		if (!variable){
-			Scope* temp = dynamic_cast<Scope*>(((Scope*)currScope)->parent);
-			while (temp && !variable){
-				variable = (Variable*)temp->variablesMap->get(name);
-				temp = temp->parent;
-			}
-		}
-		return v;
-	}
-	Type* insertTypeInCurrentScope(char* name){
-		Type * t = (Type*)this->currScope->m->get(name);
-		if (t)
-			return 0;
-		t = new Type();
-		t->setName(name);
-		t->setInheritedType(0);
-		return t;
 	}
 	
-	SymbolTable(void){
-		freopen("D:\\Compiler\\CMP\\Compiler\\Compiler\\SymbolTableOut.txt", "w", stdout);
-		this->rootScope = new Scope();
-		this->currScope = this->rootScope;
-	}
-	virtual ~SymbolTable(){
-	}
 };
 

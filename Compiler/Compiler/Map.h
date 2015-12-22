@@ -5,10 +5,7 @@
 #include "FunctionScope.h"
 #include "ClassScope.h"
 
-enum Modifiers
-{
-	None, Public, Proticted, Private
-};
+
 const int MAX_LENGTH = 71;
 
 class Map

@@ -43,28 +43,10 @@
     <ClInclude Include="ErrorRecovery.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MapElem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Variable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="SymbolTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ClassScope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FunctionScope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Scope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MainScope.h">
+    <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
