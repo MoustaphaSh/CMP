@@ -325,7 +325,7 @@ typedef union YYSTYPE {
 		char c;
 		char* str;
 		int myLineNo;
-		int myColno;
+		int myColNo;
 	}r;
 } YYSTYPE;
 /* Line 1447 of yacc.c.  */

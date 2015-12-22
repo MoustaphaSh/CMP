@@ -181,7 +181,7 @@ Null					[^.\n\t]
 "<?"											|
 "<%"											{	
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -193,7 +193,7 @@ Null					[^.\n\t]
 "<?="											|
 "<%="											{	
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -204,7 +204,7 @@ Null					[^.\n\t]
 
 "?>"											|
 "%>"											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -224,7 +224,7 @@ Null					[^.\n\t]
 												}
 
 {a}{b}{s}{t}{r}{a}{c}{t}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -234,7 +234,7 @@ Null					[^.\n\t]
 												}
 						
 "&"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -244,7 +244,7 @@ Null					[^.\n\t]
 												}
 
 {a}{r}{r}{a}{y}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -254,7 +254,7 @@ Null					[^.\n\t]
 												}
 
 "("{a}{r}{r}{a}{y}")"							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -264,7 +264,7 @@ Null					[^.\n\t]
 												}
 						
 {a}{s}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -274,7 +274,7 @@ Null					[^.\n\t]
 												}
 
 "&&"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -284,7 +284,7 @@ Null					[^.\n\t]
 												}
 
 "||"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -295,7 +295,7 @@ Null					[^.\n\t]
 
 "("{b}{o}{o}{l}")"									|
 "("{b}{o}{o}{l}{e}{a}{n}")"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -305,7 +305,7 @@ Null					[^.\n\t]
 												}
 
 {b}{r}{e}{a}{k}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -315,7 +315,7 @@ Null					[^.\n\t]
 												}
 
 {c}{a}{l}{l}{a}{b}{l}{e}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -325,7 +325,7 @@ Null					[^.\n\t]
 												}
 
 {c}{a}{s}{e}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -335,7 +335,7 @@ Null					[^.\n\t]
 												}
 
 {c}{a}{t}{c}{h}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -345,7 +345,7 @@ Null					[^.\n\t]
 												}
 
 {c}{l}{a}{s}{s}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -355,7 +355,7 @@ Null					[^.\n\t]
 												}
 
 "__"{c}{l}{a}{s}{s}"__"								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -365,7 +365,7 @@ Null					[^.\n\t]
 												}
 
 {c}{l}{o}{n}{e}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -376,7 +376,7 @@ Null					[^.\n\t]
 
 
 {Single_line_comment}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -385,7 +385,7 @@ Null					[^.\n\t]
 												}
 "/*"										{	BEGIN multilinecomment;
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;	
+													yylval.r.myColNo = colNo;	
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -408,7 +408,7 @@ Null					[^.\n\t]
 												}
 
 "."" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -418,7 +418,7 @@ Null					[^.\n\t]
 												}
 
 {c}{o}{n}{s}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -429,7 +429,7 @@ Null					[^.\n\t]
 
 \"											{	BEGIN String_Double;
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;	
+													yylval.r.myColNo = colNo;	
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -454,7 +454,7 @@ Null					[^.\n\t]
 						
 "'"										{	BEGIN String_Single;
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;	
+													yylval.r.myColNo = colNo;	
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -478,7 +478,7 @@ Null					[^.\n\t]
 												}
 
 {c}{o}{n}{t}{i}{n}{u}{e}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -488,7 +488,7 @@ Null					[^.\n\t]
 												}
 
 "{$"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -498,7 +498,7 @@ Null					[^.\n\t]
 												}
 
 "--"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -508,7 +508,7 @@ Null					[^.\n\t]
 												}
 
 {d}{e}{c}{l}{a}{r}{e}							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -518,7 +518,7 @@ Null					[^.\n\t]
 												}
 
 {d}{e}{f}{a}{u}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -528,7 +528,7 @@ Null					[^.\n\t]
 												}
 
 "__"{d}{i}{r}"__"						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -538,7 +538,7 @@ Null					[^.\n\t]
 												}
 
 "/"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -549,7 +549,7 @@ Null					[^.\n\t]
 
 "/**"										{	BEGIN DOCmultilinecomment;
 													yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;	
+													yylval.r.myColNo = colNo;	
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -572,7 +572,7 @@ Null					[^.\n\t]
 												}
 
 {d}{o}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -582,7 +582,7 @@ Null					[^.\n\t]
 												}
 
 "${"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -592,7 +592,7 @@ Null					[^.\n\t]
 												}
 
 "=>"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -604,7 +604,7 @@ Null					[^.\n\t]
 "("{r}{e}{a}{l}")"								|
 "("{d}{o}{u}{b}{l}{e}")"						|
 "("{f}{l}{o}{a}{t}")"							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -614,7 +614,7 @@ Null					[^.\n\t]
 												}
 
 "::"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -624,7 +624,7 @@ Null					[^.\n\t]
 												}
 
 {e}{c}{h}{o}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													colNo += strlen(yytext);
 													outlex<<"echo "<<lineNo<<" "<<colNo<<"\n";
 													return T_ECHO;
@@ -632,7 +632,7 @@ Null					[^.\n\t]
 
 
 "..."										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -642,7 +642,7 @@ Null					[^.\n\t]
 												}
 
 {e}{l}{s}{e}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -652,7 +652,7 @@ Null					[^.\n\t]
 												}
 
 {e}{l}{s}{e}{i}{f}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -662,14 +662,14 @@ Null					[^.\n\t]
 												}
 
 {e}{m}{p}{t}{y}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													colNo += strlen(yytext);
 													outlex<<"empty "<<lineNo<<" "<<colNo<<"\n";
 													return T_EMPTY;
 												}
 
 "$a"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -679,7 +679,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{d}{e}{c}{l}{a}{r}{e}					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -689,7 +689,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{f}{o}{r}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -699,7 +699,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{f}{o}{r}{e}{a}{c}{h}					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -709,7 +709,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{i}{f}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -719,7 +719,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{s}{w}{i}{t}{c}{h}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -729,7 +729,7 @@ Null					[^.\n\t]
 												}
 
 {e}{n}{d}{w}{h}{i}{l}{e}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -739,7 +739,7 @@ Null					[^.\n\t]
 												}
 
 {e}{v}{a}{l}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -750,7 +750,7 @@ Null					[^.\n\t]
 
 {e}{x}{i}{t}										|
 {d}{i}{e}											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -760,7 +760,7 @@ Null					[^.\n\t]
 												}
 
 {e}{x}{t}{e}{n}{d}{s}							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -770,7 +770,7 @@ Null					[^.\n\t]
 												}
 
 "__"{f}{i}{l}{e}"__"									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\s0';
 													strcat(yylval.r.str, yytext);
@@ -780,7 +780,7 @@ Null					[^.\n\t]
 												}
 
 {f}{i}{n}{a}{l}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -790,7 +790,7 @@ Null					[^.\n\t]
 												}
 
 {f}{i}{n}{a}{l}{l}{y}							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -800,7 +800,7 @@ Null					[^.\n\t]
 												}
 
 {f}{o}{r}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -810,7 +810,7 @@ Null					[^.\n\t]
 												}
 
 {f}{o}{r}{e}{a}{c}{h}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -821,7 +821,7 @@ Null					[^.\n\t]
 
 {f}{u}{n}{c}{t}{i}{o}{n}									|
 {c}{f}{u}{n}{c}{t}{i}{o}{n}					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -831,7 +831,7 @@ Null					[^.\n\t]
 												}
 
 "__"{f}{u}{n}{c}{t}{i}{o}{n}"__"				{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -841,7 +841,7 @@ Null					[^.\n\t]
 												}
 
 {g}{l}{o}{b}{a}{l}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -851,7 +851,7 @@ Null					[^.\n\t]
 												}
 
 {g}{o}{t}{o}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -861,7 +861,7 @@ Null					[^.\n\t]
 												}
 
 "__HALT_COMPILER()"	{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -870,7 +870,7 @@ Null					[^.\n\t]
 													return T_HALT_COMPILER;
 												}
 "__"{h}{a}{l}{t}"_"{c}{o}{m}{p}{i}{l}{e}{r}"()"	{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -880,7 +880,7 @@ Null					[^.\n\t]
 												}
 
 {i}{f}											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -890,7 +890,7 @@ Null					[^.\n\t]
 												}
 
 {i}{m}{p}{l}{e}{m}{e}{n}{t}{s}					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -900,7 +900,7 @@ Null					[^.\n\t]
 												}
 
 "++"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -910,7 +910,7 @@ Null					[^.\n\t]
 												}
 
 {i}{n}{c}{l}{u}{d}{e}"()"								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -920,7 +920,7 @@ Null					[^.\n\t]
 												}
 
 {i}{n}{c}{l}{u}{d}{e}"_"{o}{n}{c}{e}		{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -930,7 +930,7 @@ Null					[^.\n\t]
 												}
 
 {i}{n}{s}{t}{a}{n}{c}{e}{o}{f}					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -940,7 +940,7 @@ Null					[^.\n\t]
 												}
 
 {i}{n}{s}{t}{e}{a}{d}{o}{f}"()"					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -951,7 +951,7 @@ Null					[^.\n\t]
 
 "("{i}{n}{t}")"									|
 "("{i}{n}{t}{e}{g}{e}{r}")"						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -961,7 +961,7 @@ Null					[^.\n\t]
 												}
 
 {i}{n}{t}{e}{r}{f}{a}{c}{e}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -971,7 +971,7 @@ Null					[^.\n\t]
 												}
 
 {i}{s}{s}{e}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -981,7 +981,7 @@ Null					[^.\n\t]
 												}
 
 "=="										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -991,7 +991,7 @@ Null					[^.\n\t]
 												}
 
 ">="										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1001,7 +1001,7 @@ Null					[^.\n\t]
 												}
 
 "==="										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1012,7 +1012,7 @@ Null					[^.\n\t]
 
 "!="										|
 "<>"											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1022,7 +1022,7 @@ Null					[^.\n\t]
 												}
 
 "!=="										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1032,7 +1032,7 @@ Null					[^.\n\t]
 												}
 
 "<="										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1042,7 +1042,7 @@ Null					[^.\n\t]
 												}
 
 "<=>"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1052,7 +1052,7 @@ Null					[^.\n\t]
 												}
 
 "__"{l}{i}{n}{e}"__"									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1062,7 +1062,7 @@ Null					[^.\n\t]
 												}
 
 {l}{i}{s}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1072,7 +1072,7 @@ Null					[^.\n\t]
 												}
 
 {Number}*("."{Number}+)?					{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1084,7 +1084,7 @@ Null					[^.\n\t]
 "-"?{Number}+								|
 "0x"[{Number}ABCDEF]+							|
 "0b"[01]+										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1094,7 +1094,7 @@ Null					[^.\n\t]
 												}
 
 {a}{n}{d}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1104,7 +1104,7 @@ Null					[^.\n\t]
 												}
 
 {o}{r}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1114,7 +1114,7 @@ Null					[^.\n\t]
 												}
 
 {x}{o}{r}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1124,7 +1124,7 @@ Null					[^.\n\t]
 												}
 
 "__"{m}{e}{t}{h}{o}{d}"__"								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1134,7 +1134,7 @@ Null					[^.\n\t]
 												}
 
 "-"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1144,7 +1144,7 @@ Null					[^.\n\t]
 												}
 
 "%"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1154,7 +1154,7 @@ Null					[^.\n\t]
 												}
 
 "*"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1164,7 +1164,7 @@ Null					[^.\n\t]
 												}
 
 {n}{a}{m}{e}{s}{p}{a}{c}{e}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1174,7 +1174,7 @@ Null					[^.\n\t]
 												}
 
 "__"{n}{a}{m}{e}{s}{p}{a}{c}{e}"__"							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1184,7 +1184,7 @@ Null					[^.\n\t]
 												}
 
 \\											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1194,7 +1194,7 @@ Null					[^.\n\t]
 												}
 
 {n}{e}{w}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1204,7 +1204,7 @@ Null					[^.\n\t]
 												}
 
 "("{o}{b}{j}{e}{c}{t}")"						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1214,7 +1214,7 @@ Null					[^.\n\t]
 												}
 
 "->"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1224,7 +1224,7 @@ Null					[^.\n\t]
 												}
 
 "|"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1234,7 +1234,7 @@ Null					[^.\n\t]
 												}
 
 "+"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1244,7 +1244,7 @@ Null					[^.\n\t]
 												}
 
 "**"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1254,7 +1254,7 @@ Null					[^.\n\t]
 												}
 
 "**"" "*"="								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1264,7 +1264,7 @@ Null					[^.\n\t]
 												}
 						
 {p}{r}{i}{n}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);		
@@ -1274,7 +1274,7 @@ Null					[^.\n\t]
 												}
 
 {p}{r}{i}{v}{a}{t}{e}							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1284,7 +1284,7 @@ Null					[^.\n\t]
 												}
 
 {p}{u}{b}{l}{i}{c}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1294,7 +1294,7 @@ Null					[^.\n\t]
 												}
 
 {p}{r}{o}{t}{e}{c}{t}{e}{d}						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1304,7 +1304,7 @@ Null					[^.\n\t]
 												}
 
 {r}{e}{q}{u}{i}{r}{e}							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1314,7 +1314,7 @@ Null					[^.\n\t]
 												}
 
 {r}{e}{q}{u}{i}{r}{e}"_"{o}{n}{c}{e}				{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1324,7 +1324,7 @@ Null					[^.\n\t]
 												}
 
 {r}{e}{t}{u}{r}{n}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1334,7 +1334,7 @@ Null					[^.\n\t]
 												}
 
 "<<"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1344,7 +1344,7 @@ Null					[^.\n\t]
 												}
 
 "<<"" "*"="								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1354,7 +1354,7 @@ Null					[^.\n\t]
 												}
 
 ">>"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1364,7 +1364,7 @@ Null					[^.\n\t]
 												}
 
 ">>"" "*"="								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1374,7 +1374,7 @@ Null					[^.\n\t]
 												}
 
 "<<<"										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1384,7 +1384,7 @@ Null					[^.\n\t]
 												}
 
 {s}{t}{a}{t}{i}{c}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1394,7 +1394,7 @@ Null					[^.\n\t]
 												}
 
 "("{s}{t}{r}{i}{n}{g}")"						{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1404,7 +1404,7 @@ Null					[^.\n\t]
 												}
 
 {s}{w}{i}{t}{c}{h}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1414,7 +1414,7 @@ Null					[^.\n\t]
 												}
 
 {t}{h}{r}{o}{w}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1424,7 +1424,7 @@ Null					[^.\n\t]
 												}
 
 {t}{r}{a}{i}{t}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1434,7 +1434,7 @@ Null					[^.\n\t]
 												}
 
 "__"{t}{r}{a}{i}{t}"__"								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1444,7 +1444,7 @@ Null					[^.\n\t]
 												}
 
 {t}{r}{y}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1454,7 +1454,7 @@ Null					[^.\n\t]
 												}
 
 {u}{n}{s}{e}{t}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1464,7 +1464,7 @@ Null					[^.\n\t]
 												}
 
 "("{u}{n}{s}{e}{t}")"							{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1474,7 +1474,7 @@ Null					[^.\n\t]
 												}
 
 {u}{s}{e}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1484,7 +1484,7 @@ Null					[^.\n\t]
 												}
 
 {v}{a}{r}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1502,7 +1502,7 @@ Null					[^.\n\t]
 {b}{o}{o}{l}									|
 {c}{h}{a}{r}											|
 {s}{t}{r}{i}{n}{g}								{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1512,7 +1512,7 @@ Null					[^.\n\t]
 												}
 
 {Variable}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1522,7 +1522,7 @@ Null					[^.\n\t]
 												}
 
 {w}{h}{i}{l}{e}									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1532,7 +1532,7 @@ Null					[^.\n\t]
 												}
 
 "^"" "*"="									{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1542,7 +1542,7 @@ Null					[^.\n\t]
 												}
 
 {y}{i}{e}{l}{d}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1553,7 +1553,7 @@ Null					[^.\n\t]
 
 
 {Name}										{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
@@ -1563,7 +1563,7 @@ Null					[^.\n\t]
 												}
 
 [\n.]*											{	yylval.r.myLineNo= lineNo;
-													yylval.r.myColno = colNo;
+													yylval.r.myColNo = colNo;
 													yylval.r.str = new char[255];
 													yylval.r.str[0] = '\0';
 													strcat(yylval.r.str, yytext);
