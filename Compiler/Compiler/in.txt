@@ -1,6 +1,7 @@
 <?php
 echo  "hello I'm the second sample and I'm not simple";
-echo  "every one who are working with us since term has started can parsing me";
+echo  "eeeee";
+function &m(int &$mmm, int $nn):value{}
 class DB{
 	static private string $dbConn;
 	static private string  $host = 'localhost';

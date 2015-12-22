@@ -147,7 +147,7 @@
 		char c;
 		char* str;
 		int myLineNo;
-		int myColno;
+		int myColNo;
 	}r;
 }
 	
@@ -329,8 +329,8 @@ inner_statement:
 ;
 
 statement:
-      '{' inner_statement_list '}'
-	  {cout<<"statement1\n";}
+      inner_statement_list_start_scope inner_statement_list '}'
+	  {cout<<"statement1\n"; p->finishscope();}
     | T_IF parentheses_expr statement elseif_list else_single
 	{cout<<"statement2\n";}
     | T_IF parentheses_expr ':' inner_statement_list new_elseif_list new_else_single T_ENDIF ';'
@@ -387,6 +387,11 @@ statement:
 	{cout<<"statement28\n";}
 ;
 
+inner_statement_list_start_scope:
+	  '{'
+	  {cout<<"inner_statement_list_start_scope\n"; p->startscope();}
+;
+
 catches:  
       /* empty */
 	  {cout<<"catches1\n";}
@@ -395,16 +400,25 @@ catches:
 ;
 
 catch:
-    T_CATCH left_arc name T_VARIABLE right_arc '{' inner_statement_list '}'
-	{cout<<"catch\n";}  
+    catch_header '{' inner_statement_list '}'
+	{cout<<"catch\n"; p->finishscope();}  
+;
+
+catch_header:
+	  T_CATCH left_arc name T_VARIABLE right_arc
+	  {cout<<"catch_header\n"; p->startscope();}
 ;
 
 optional_finally:
       /* empty */
 	  {cout<<"optional_finally1\n";}
-    | T_FINALLY '{' inner_statement_list '}'
-	{cout<<"optional_finally2\n";}
+    | T_FINALLY finally_body
+	{cout<<"optional_finally2\n"; p->finishscope();}
 ;
+
+finally_body:
+	  '{' inner_statement_list '}'
+	{cout<<"finally_body\n"; p->startscope();}
 
 variables_list:
       variable
@@ -428,10 +442,15 @@ optional_ellipsis:
 ;
 
 function_declaration_statement:
-    T_FUNCTION optional_ref T_STRING left_arc parameter_list right_arc optional_return_type '{' inner_statement_list '}'
-	{cout<<"function_declaration_statement "<<$<r.str>1<<" "<<$<r.str>3<<"\n";}
+    function_header '{' inner_statement_list '}'
+	{cout<<"function_declaration_statement"; p->finishscope();}
 ;
 
+function_header:
+    T_FUNCTION optional_ref T_STRING left_arc parameter_list right_arc optional_return_type
+	{cout<<"function_header"; p->addfunction($<r.srt>3, $<r.myLineNo>3, $<r.myColNo>3);}
+;
+ 
 class_declaration_statement:
       class_entry_type T_STRING extends_from implements_list '{' class_statement_list '}'
 	  {cout<<"class_declaration_statement1\n";}
@@ -617,7 +636,7 @@ parameter_without_static_scalar_list:
 
 parameter_without_static_scalar:
 	  param_type optional_ref optional_ellipsis T_VARIABLE
-	  {cout<<"parameter_without_static_scalar\n";}
+	  {cout<<"parameter_without_static_scalar\n"; p->addparameter($<r.srt>4, $<r.myLineNo>4, $<r.myColNo>4);}
 
 parameter_with_static_scalar_list:
       parameter_with_static_scalar
@@ -628,7 +647,7 @@ parameter_with_static_scalar_list:
 
 parameter_with_static_scalar:
 	  param_type optional_ref optional_ellipsis T_VARIABLE '=' static_scalar
-	  {cout<<"parameter_with_static_scalar\n";}
+	  {cout<<"parameter_with_static_scalar\n"; p->addparameter($<r.srt>4, $<r.myLineNo>4, $<r.myColNo>4);}
 
 type:
       name
@@ -726,8 +745,8 @@ class_statement:
 	  {cout<<"class_statement1\n";}
     | T_CONST type class_const_list ';'
 	{cout<<"class_statement2\n";}
-    | method_modifiers T_FUNCTION optional_ref identifier left_arc parameter_list right_arc optional_return_type method_body
-	{cout<<"class_statement3\n";}
+    | method_header method_body
+	{cout<<"class_statement3\n"; p->finishscope();}
     | T_USE name_list trait_adaptations
 	{cout<<"class_statement4\n";}
 ;
@@ -769,6 +788,10 @@ trait_method_reference:
 	  {cout<<"trait_method_reference1\n";}
     | identifier
 	{cout<<"trait_method_reference2\n";}
+;
+method_header:
+	  method_modifiers T_FUNCTION optional_ref identifier left_arc parameter_list right_arc optional_return_type
+	  {cout<<"method_header\n"; p->addfunction($<r.srt>4, $<r.myLineNo>4, $<r.myColNo>4);}
 ;
 
 method_body:
@@ -823,9 +846,9 @@ property_declaration_list:
 
 property_declaration:
 	  T_VARIABLE
-	  {cout<<"property_declaration1\n";}
+	  {cout<<"property_declaration1\n"; p->adddatamember($<r.srt>1, $<r.myLineNo>1, $<r.myColNo>1);}
     | T_VARIABLE '=' static_scalar
-	{cout<<"property_declaration2\n";}
+	{cout<<"property_declaration2\n"; p->adddatamember($<r.srt>1, $<r.myLineNo>1, $<r.myColNo>1);}
 ;
 
 expr_list:
@@ -1006,10 +1029,19 @@ expr:
 	{cout<<"expr80\n";}
     | T_YIELD_FROM expr
 	{cout<<"expr81\n";}
-    | T_FUNCTION optional_ref left_arc parameter_list right_arc lexical_vars optional_return_type      '{' inner_statement_list '}'
+    | non_static_expr_function_header '{' inner_statement_list '}'
 	{cout<<"expr82\n";}
-    | T_STATIC T_FUNCTION optional_ref left_arc parameter_list right_arc lexical_vars optional_return_type      '{' inner_statement_list '}'
+    | static_expr_function_header '{' inner_statement_list '}'
 	{cout<<"expr83\n";}
+;
+
+non_static_expr_function_header:
+	  T_FUNCTION optional_ref left_arc parameter_list right_arc lexical_vars optional_return_type
+	  {cout<<"non_static_expr_function_header\n";}
+;
+static_expr_function_header:
+	  T_STATIC T_FUNCTION optional_ref left_arc parameter_list right_arc lexical_vars optional_return_type
+	  {cout<<"static_expr_function_header\n";}
 ;
 
 parentheses_expr:
@@ -1046,9 +1078,14 @@ scalar_dereference:
 ;
 
 anonymous_class:
-      T_CLASS ctor_arguments extends_from implements_list '{' class_statement_list '}'
-	  {cout<<"anonymous_class\n";}
-          
+      anonymous_class_header '{' class_statement_list '}'
+	  {cout<<"anonymous_class\n"; p->finishscope();}
+;
+
+anonymous_class_header:
+      T_CLASS ctor_arguments extends_from implements_list
+	  {cout<<"anonymous_class\n"; p->($<>);}
+;
 
 new_expr:
       T_NEW class_name_reference ctor_arguments
@@ -1403,7 +1440,7 @@ reference_variable:
     | T_VARIABLE
 	{cout<<"reference_variable3\n";}
 	| T_TYPE T_VARIABLE
-	{cout<<"reference_variable4\n";}
+	{cout<<"reference_variable4\n"; p->addvariable($<r.str>2, $<r.myLineNo>2, $<r.myColNo>2);}
     | '$' '{' expr '}'
 	{cout<<"reference_variable5\n";}
 ;

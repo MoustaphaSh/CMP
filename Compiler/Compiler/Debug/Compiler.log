@@ -1,4 +1,4 @@
-﻿Build started 12/21/2015 3:28:04 PM.
+﻿Build started 12/21/2015 10:55:13 PM.
      1>Project "D:\Compiler\CMP\Compiler\Compiler\Compiler.vcxproj" on node 2 (Build target(s)).
      1>Link:
          Compiler.vcxproj -> D:\Compiler\CMP\Compiler\Debug\Compiler.exe
@@ -6,4 +6,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.28
+Time Elapsed 00:00:00.05
